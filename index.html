@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Stock Watchlist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="inputBox">
+      <form class="stock" action="index.html" method="post" onsubmit="submitForm()">
+        <div>
+          <label for="name">Stock Name:</label>
+          <input type="text" name="name" id="name">
+        </div>
+        <div>
+          <input type="submit" name="submit" value="SUBMIT">
+        </div>
+      </form>
+    </div>
+    <!-- <button type="submit" class="btn" onclick="updateList()">SUBMIT</button> -->
+    <table class = "list" id="List">
+      <thead>
+        <tr>
+          <th>Stock Name</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+  <script src="stock.js"></script>
+</body>
+</html>

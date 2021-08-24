@@ -10,7 +10,7 @@
 <body>
   <div class="container">
     <div class="inputBox">
-      <form class="stock" action="index.html" method="post" onsubmit="submitForm()">
+      <form class="stock" onsubmit="event.preventDefault();submitForm()">
         <div>
           <label for="name">Stock Name:</label>
           <input type="text" name="name" id="name">

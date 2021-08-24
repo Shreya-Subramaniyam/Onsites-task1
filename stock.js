@@ -6,12 +6,12 @@ function read() {
 }
 
 function insert(data) {
-    var table = document.getElementById("List").getElementByTagName("tbody");
+    var table = document.getElementById("List").getElementsByTagName("tbody")[0];
     var row = table.insertRow(table.length);
-    var naMe = row.insertCell(0);
-    naMe.innerHTML = data;
-    var operations = row.insertCell(1);
-    operations.innerHTML = "<a>Edit</a><a>Delete</a>";
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = data;
+    cell2.innerHTML = "<a>Edit</a>";
 }
 
 function submitForm() {

@@ -5,6 +5,10 @@
   padding: 10px;
 } */
 
+form {
+  text-align: center;
+}
+
 .inputBox {
   display: list-item;
   justify-content: center;

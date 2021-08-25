@@ -15,8 +15,8 @@ function insert(data) {
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     cell1.innerHTML = data;
-    cell2.innerHTML = `<a onclick = "edit(this)">Edit</a>
-                      <a onclick = "deleteObj(this)">Delete</a>`;
+    cell2.innerHTML = `<button onclick = "edit(this)">Edit</button><br>
+                      <button onclick = "deleteObj(this)">Delete</button><br><button onclick = "moveObj(this)">Move To Top</button>`;
 }
 
 function submitForm() {
@@ -72,8 +72,7 @@ function initialnames() {
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     cell1.innerHTML = names[i];
-    cell2.innerHTML = `<a onclick = "edit(this)">Edit</a>
-                      <a onclick = "deleteObj(this)">Delete</a>`;
+    cell2.innerHTML = `<button onclick = "edit(this)">Edit</button><br><button onclick = "deleteObj(this)">Delete</button><br><button onclick = "moveObj(this)">Move To Top</button>`;
   }
 }
 
@@ -85,7 +84,17 @@ function reRender() {
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     cell1.innerHTML = names[i];
-    cell2.innerHTML = `<a onclick = "edit(this)">Edit</a>
-                      <a onclick = "deleteObj(this)">Delete</a>`;
+    cell2.innerHTML = `<button onclick = "edit(this)">Edit</button><br><button onclick = "deleteObj(this)">Delete</button><br><button onclick = "moveObj(this)">Move To Top</button>`;
   }
+}
+
+function moveObj(obj) {
+  var currName;
+  var currRow = obj.parentElement.parentElement;
+  position = currRow.rowIndex;
+  currName = table.rows[position-1].cells[0].innerHTML;
+  names.splice(position-1,1);
+  names.splice(0,0, currName);
+  localStorage.setItem("stockName", JSON.stringify(names));
+  reRender();
 }
